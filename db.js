@@ -5,7 +5,7 @@ const pool = new Pool({
     // user: "postgres",
     user: "aazeez",
 
-    // host: "localho/st",
+    // host: "localhost",
     host: "dpg-cobhnlmn7f5s73fpi10g-a",
 
     // database: "inventory",

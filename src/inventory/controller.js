@@ -20,8 +20,8 @@ const getInventoryById = (req, res ) => {
 
 // add new car
 const addNewCar = (req, res ) => {
-    const {id, carbrandmodel, year} = req.body;
-    pool.query(queries.addNewCar, [id, carbrandmodel, year], (error, results) => {
+    const {id, brand, model, year} = req.body;
+    pool.query(queries.addNewCar, [id, brand, model, year], (error, results) => {
         if (error) throw error;
         res.status(200).send("Added New Inventory Item Successfully")
     });
@@ -29,7 +29,7 @@ const addNewCar = (req, res ) => {
 
 // update inventory
 const updateCarYear = (req, res) => {
-    const { year, id } = req.body;
+    const {year, id } = req.body;
     pool.query(queries.updateCarYear, [year, id], (error, results) => {
         if(error) throw error;
         res.status(200).send("Updated Inventory Successfully");
@@ -42,4 +42,5 @@ module.exports = {
     getInventoryById,
     addNewCar,
     updateCarYear,
+
 };
